@@ -1,0 +1,483 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-22T03:04:04.483Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 29,
+    "implemented": 20,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Create backend data model for games with fields: id, title, franchise, releaseYear, developer, genre, platform, sport, description, rating, coverImage, tags, trending, isNew, playCount",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-10",
+        "summary": "Create homepage with hero banner section featuring prominent heading and call-to-action",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Build search bar component with live filtering that filters games in real-time as user types, searching across title, description, and tags",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/SearchBar.tsx",
+          "frontend/src/hooks/useGameSearch.ts",
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/SearchBar.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Create category filter system with dropdown or checkbox filters for genre, year, franchise, and sport that can be combined with search",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/GameFilters.tsx",
+          "frontend/src/hooks/useGameFilters.ts",
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/GameFilters.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Build Trending, New Releases, and Popular sections on homepage displaying curated game lists with horizontal scrolling carousels",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/GameCarousel.tsx",
+          "frontend/src/hooks/useGames.ts",
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/GameCarousel.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Create game thumbnail component with hover animations displaying cover image, title, and genre, with scale and glow effects on hover",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/GameThumbnail.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/GameThumbnail.tsx"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Build game detail page component displaying game title, cover image, release year, developer, platform, full description, average rating with star display, play button, comments section, and related games carousel",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/GameDetailPage.tsx",
+          "frontend/src/hooks/useGame.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/GameDetailPage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Implement user authentication UI with login/signup modal or page using Internet Identity, displaying login status in header with user menu",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Header.tsx",
+          "frontend/src/components/ProfileSetupModal.tsx",
+          "frontend/src/hooks/useUserProfile.ts",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Header.tsx",
+          "frontend/src/components/ProfileSetupModal.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Create favorites list page displaying all games the user has favorited with ability to remove games, accessible from user menu",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/FavoritesPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/FavoritesPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx"
+        ]
+      },
+      {
+        "id": "REQ-18",
+        "summary": "Build recently played page showing chronological list of games the user has played with timestamps, accessible from user menu",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/RecentlyPlayedPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/RecentlyPlayedPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx"
+        ]
+      },
+      {
+        "id": "REQ-19",
+        "summary": "Create leaderboard page displaying top 100 players ranked by total play count with user ranking, username display, and score display",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/LeaderboardPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/LeaderboardPage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Implement backend CRUD operations for games: create game, update game, delete game, get game by id, list all games with pagination, query games by filters (genre, year, franchise, sport, search term)",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-20",
+        "summary": "Build admin dashboard page accessible only to admin users with game upload form (title, franchise, year, developer, genre, platform, sport, description, cover image URL, tags) and game management table with edit/delete actions",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/AdminDashboard.tsx",
+          "frontend/src/components/AdminRoute.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/AdminDashboard.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/Header.tsx"
+        ]
+      },
+      {
+        "id": "REQ-21",
+        "summary": "Implement rating UI on game detail page allowing logged-in users to select 1-5 stars and submit rating, displaying current user rating and average rating",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/GameRating.tsx",
+          "frontend/src/pages/GameDetailPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/GameRating.tsx",
+          "frontend/src/pages/GameDetailPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-22",
+        "summary": "Create comments UI on game detail page with comment form for logged-in users, comment list displaying username and timestamp, and edit/delete buttons for user's own comments",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/CommentsSection.tsx",
+          "frontend/src/pages/GameDetailPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/CommentsSection.tsx",
+          "frontend/src/pages/GameDetailPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-23",
+        "summary": "Add favorite toggle button on game detail page and game thumbnails allowing users to add/remove games from favorites with heart icon animation",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/FavoriteButton.tsx",
+          "frontend/src/components/GameThumbnail.tsx",
+          "frontend/src/pages/GameDetailPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/FavoriteButton.tsx",
+          "frontend/src/components/GameThumbnail.tsx",
+          "frontend/src/pages/GameDetailPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-24",
+        "summary": "Implement dark mode theme with neon accent colors throughout the application using dark backgrounds (dark gray or black) and neon colors (cyan, magenta, electric blue, or lime green) for accents, buttons, and highlights",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ]
+      },
+      {
+        "id": "REQ-25",
+        "summary": "Ensure fully responsive design adapting layout for mobile (320px-767px), tablet (768px-1023px), and desktop (1024px+) screen sizes with mobile-first approach",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Header.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/components/GameThumbnail.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Header.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/components/GameThumbnail.tsx"
+        ]
+      },
+      {
+        "id": "REQ-26",
+        "summary": "Optimize frontend performance with lazy loading for game thumbnails, pagination for game lists (50 games per page), and React Query caching for API responses",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/GameThumbnail.tsx",
+          "frontend/src/hooks/useGames.ts",
+          "frontend/src/components/GameList.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/GameThumbnail.tsx"
+        ]
+      },
+      {
+        "id": "REQ-27",
+        "summary": "Implement SEO optimization with semantic HTML, descriptive page titles per route, meta descriptions, and proper heading hierarchy",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/SEOHead.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/GameDetailPage.tsx",
+          "frontend/src/components/GameThumbnail.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/GameDetailPage.tsx",
+          "frontend/src/components/GameThumbnail.tsx"
+        ]
+      },
+      {
+        "id": "REQ-28",
+        "summary": "Create franchise grouping pages showing all games belonging to a specific franchise (e.g., all Call of Duty titles, all NBA 2K editions) with franchise header and game list",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/FranchisePage.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/FranchisePage.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-29",
+        "summary": "Establish a bold, energetic visual design direction with neon cyberpunk aesthetics: use angular geometric shapes, gradient overlays on images, glowing borders on interactive elements, and high-contrast typography that evokes a competitive esports atmosphere",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/components/GameThumbnail.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/components/GameThumbnail.tsx"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Seed backend with initial game dataset of 500+ games including: 30 Action games (Shadow Strike, Bullet Storm Arena, Cyber Ninja, etc.), 30 Puzzle games (Brain Twist, Logic Master, Tile Connect, etc.), 30 Racing games (Nitro Speed, Drift King, Street Racer Pro, etc.), 30 Sports games (Soccer Pro 2026, Basketball Legends, Street Football, etc.), 30 RPG games (Dragon Realm, Mystic Quest, Shadow Kingdom, etc.), additional categories (Simulation, Strategy, Horror, Multiplayer, Arcade, Idle, Adventure, Survival, Sandbox, Platformer) with 30 games each, all NBA 2K editions (1999-present), all NBA Live editions, all Madden NFL editions (1988-present), all NCAA Football editions, all FIFA editions (1993-2023), EA Sports FC editions, Pro Evolution Soccer editions, major franchises: Fortnite, Minecraft, Roblox, Grand Theft Auto series, Call of Duty series, Halo series, The Legend of Zelda series, Super Mario series, God of War series, Elden Ring, Apex Legends, Valorant, Rocket League, Overwatch, League of Legends, Counter-Strike, Red Dead Redemption series, Among Us, Terraria, The Sims 4",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Create backend user authentication system with Internet Identity integration supporting user registration, login, and session management",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Implement backend user profile system with favorites list, recently played games tracking, and play count tracking per game",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Create backend rating system allowing users to rate games on a scale (1-5 stars) and calculate average ratings per game",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Implement backend comments system for games allowing users to post, edit, and delete comments with timestamps",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Create backend leaderboard system tracking top players by total play count across all games",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Implement backend admin authorization system with admin role assignment and admin-only endpoints for game management",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/authorization/MixinAuthorization.mo",
+    "backend/authorization/access-control.mo",
+    "backend/blob-storage/Mixin.mo",
+    "backend/blob-storage/Storage.mo",
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/game-placeholder.dim_400x500.png",
+    "frontend/public/assets/generated/hero-banner.dim_1920x600.png",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/CommentsSection.tsx",
+    "frontend/src/components/FavoriteButton.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/GameCarousel.tsx",
+    "frontend/src/components/GameFilters.tsx",
+    "frontend/src/components/GameRating.tsx",
+    "frontend/src/components/GameThumbnail.tsx",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/ProfileSetupModal.tsx",
+    "frontend/src/components/SearchBar.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AdminDashboard.tsx",
+    "frontend/src/pages/FavoritesPage.tsx",
+    "frontend/src/pages/FranchisePage.tsx",
+    "frontend/src/pages/GameDetailPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/LeaderboardPage.tsx",
+    "frontend/src/pages/RecentlyPlayedPage.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

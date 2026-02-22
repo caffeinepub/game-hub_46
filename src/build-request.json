@@ -1,0 +1,639 @@
+{
+  "kind": "build_request",
+  "title": "Build comprehensive game library platform with 500+ titles",
+  "projectName": "Game Hub",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create backend data model for games with fields: id, title, franchise, releaseYear, developer, genre, platform, sport, description, rating, coverImage, tags, trending, isNew, playCount",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Each game must include: id, title, franchise, releaseYear, developer, genre, platform, sport (if applicable), description, rating, coverImage, tags"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Game type includes all specified fields",
+        "Rating field supports numerical values",
+        "Sport field is optional and supports null values",
+        "Tags field supports array of strings"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement backend CRUD operations for games: create game, update game, delete game, get game by id, list all games with pagination, query games by filters (genre, year, franchise, sport, search term)",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Admin dashboard to upload/edit games",
+          "Advanced search with live filtering",
+          "Filter by genre, year, franchise, sport"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Create game endpoint accepts all game fields",
+        "Update game endpoint allows partial updates",
+        "Delete game endpoint removes game by id",
+        "Query endpoint supports multiple simultaneous filters",
+        "List endpoint returns paginated results",
+        "Search term filters by title, description, and tags"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Seed backend with initial game dataset of 500+ games including: 30 Action games (Shadow Strike, Bullet Storm Arena, Cyber Ninja, etc.), 30 Puzzle games (Brain Twist, Logic Master, Tile Connect, etc.), 30 Racing games (Nitro Speed, Drift King, Street Racer Pro, etc.), 30 Sports games (Soccer Pro 2026, Basketball Legends, Street Football, etc.), 30 RPG games (Dragon Realm, Mystic Quest, Shadow Kingdom, etc.), additional categories (Simulation, Strategy, Horror, Multiplayer, Arcade, Idle, Adventure, Survival, Sandbox, Platformer) with 30 games each, all NBA 2K editions (1999-present), all NBA Live editions, all Madden NFL editions (1988-present), all NCAA Football editions, all FIFA editions (1993-2023), EA Sports FC editions, Pro Evolution Soccer editions, major franchises: Fortnite, Minecraft, Roblox, Grand Theft Auto series, Call of Duty series, Halo series, The Legend of Zelda series, Super Mario series, God of War series, Elden Ring, Apex Legends, Valorant, Rocket League, Overwatch, League of Legends, Counter-Strike, Red Dead Redemption series, Among Us, Terraria, The Sims 4",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Total game count must exceed 500",
+          "Include every title from franchises such as: Fortnite, Minecraft, Roblox, Grand Theft Auto (all titles)",
+          "Include every edition from: NBA 2K (1999–present), NBA Live (all editions)",
+          "Include every edition from: Madden NFL (1988–present)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least 500 unique games exist in the database",
+        "All listed game titles are included",
+        "All major franchise series have multiple editions",
+        "Sports games include yearly editions spanning specified date ranges",
+        "Each game has complete metadata (title, year, developer, genre, etc.)",
+        "Games are properly categorized by genre"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create backend user authentication system with Internet Identity integration supporting user registration, login, and session management",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "User accounts (login/signup)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can authenticate using Internet Identity",
+        "User sessions persist across page reloads",
+        "User profile stores unique identifier"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Implement backend user profile system with favorites list, recently played games tracking, and play count tracking per game",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Favorites list",
+          "Recently played"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can add games to favorites list",
+        "Users can remove games from favorites",
+        "Users can retrieve their favorites list",
+        "Recently played tracks last 20 games played by user with timestamps",
+        "Play count increments when user plays a game"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create backend rating system allowing users to rate games on a scale (1-5 stars) and calculate average ratings per game",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Rating system",
+          "Ratings & reviews"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can submit one rating per game",
+        "Ratings are stored with user id and game id",
+        "Average rating is calculated and stored per game",
+        "Users can update their existing rating",
+        "Get game endpoint returns average rating and total rating count"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Implement backend comments system for games allowing users to post, edit, and delete comments with timestamps",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Comments section"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can post comments on game detail pages",
+        "Comments include user id, game id, text, and timestamp",
+        "Users can edit their own comments",
+        "Users can delete their own comments",
+        "Comments are returned in reverse chronological order"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create backend leaderboard system tracking top players by total play count across all games",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Leaderboards"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Leaderboard aggregates total plays per user",
+        "Leaderboard returns top 100 users ranked by play count",
+        "Leaderboard data updates in real-time as users play games"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Implement backend admin authorization system with admin role assignment and admin-only endpoints for game management",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Admin dashboard to upload/edit games"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin role can be assigned to user principals",
+        "Only admins can create, update, or delete games",
+        "Non-admin users receive authorization errors when accessing admin endpoints"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Create homepage with hero banner section featuring prominent heading and call-to-action",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Clean homepage with hero banner"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero banner displays at top of homepage",
+        "Hero banner includes heading text",
+        "Hero banner includes call-to-action button",
+        "Hero banner uses dark background with neon accent colors"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Build search bar component with live filtering that filters games in real-time as user types, searching across title, description, and tags",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Search bar with live filtering",
+          "Advanced search + live filtering"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Search input appears prominently on homepage",
+        "Search results update immediately as user types",
+        "Search matches game titles, descriptions, and tags",
+        "Search results display below search bar",
+        "Empty search shows all games"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Create category filter system with dropdown or checkbox filters for genre, year, franchise, and sport that can be combined with search",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Category filter system",
+          "Filter by genre, year, franchise, sport"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Genre filter shows all available genres",
+        "Year filter allows selection of release year range",
+        "Franchise filter lists major franchises",
+        "Sport filter shows sports categories",
+        "Multiple filters can be active simultaneously",
+        "Filters combine with search results",
+        "Clear filters button resets all selections"
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Build Trending, New Releases, and Popular sections on homepage displaying curated game lists with horizontal scrolling carousels",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Trending, New, and Popular sections",
+          "Trending section",
+          "New releases section"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Trending section shows games with highest recent play counts",
+        "New Releases section shows games sorted by release date (newest first)",
+        "Popular section shows games with highest all-time play counts",
+        "Each section displays as horizontal scrolling carousel",
+        "Each section shows game thumbnails with titles"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Create game thumbnail component with hover animations displaying cover image, title, and genre, with scale and glow effects on hover",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Game thumbnails with hover animations"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Thumbnail displays game cover image",
+        "Title appears below or overlaid on image",
+        "Genre tag displays on thumbnail",
+        "Hover triggers scale-up animation",
+        "Hover adds neon glow effect around thumbnail",
+        "Clicking thumbnail navigates to game detail page"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Build game detail page component displaying game title, cover image, release year, developer, platform, full description, average rating with star display, play button, comments section, and related games carousel",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Game detail page with: Game description, Play button, Rating system, Comments section, Related games"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Page displays game title prominently at top",
+        "Cover image displays at large size",
+        "Metadata (year, developer, platform) appears organized",
+        "Full description text displays below metadata",
+        "Rating displays as star icons with numerical average",
+        "Play button is prominently positioned",
+        "Comments section shows all comments for the game",
+        "Related games carousel shows games from same genre or franchise",
+        "Page is accessible via route /game/:id"
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Implement user authentication UI with login/signup modal or page using Internet Identity, displaying login status in header with user menu",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "User accounts (login/signup)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Login button appears in header when not authenticated",
+        "Clicking login triggers Internet Identity authentication flow",
+        "User avatar or username displays in header when authenticated",
+        "User menu dropdown shows profile link and logout option",
+        "Authentication state persists across page navigation"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Create favorites list page displaying all games the user has favorited with ability to remove games, accessible from user menu",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Favorites list"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Favorites page accessible from user menu",
+        "Page displays grid of favorited games",
+        "Each game shows thumbnail and title",
+        "Remove button appears on each game",
+        "Clicking remove updates list immediately",
+        "Empty state displays when no favorites exist"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Build recently played page showing chronological list of games the user has played with timestamps, accessible from user menu",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Recently played"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Recently played page accessible from user menu",
+        "Games display in reverse chronological order",
+        "Each entry shows game thumbnail, title, and play timestamp",
+        "List shows last 20 played games",
+        "Empty state displays when no games played"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Create leaderboard page displaying top 100 players ranked by total play count with user ranking, username display, and score display",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Leaderboards"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Leaderboard page accessible from main navigation",
+        "Table displays rank, username, and total plays",
+        "Top 100 users are shown",
+        "Current user's rank is highlighted if in top 100",
+        "Ranks update when data refreshes"
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "text": "Build admin dashboard page accessible only to admin users with game upload form (title, franchise, year, developer, genre, platform, sport, description, cover image URL, tags) and game management table with edit/delete actions",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Admin dashboard to upload/edit games"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin dashboard route protected and only accessible to admins",
+        "Upload form includes all required game fields",
+        "Form validation ensures required fields are filled",
+        "Successful upload adds game to database and shows confirmation",
+        "Game management table lists all games with pagination",
+        "Edit button opens form pre-filled with game data",
+        "Delete button removes game after confirmation",
+        "Non-admin users redirected when accessing admin routes"
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "text": "Implement rating UI on game detail page allowing logged-in users to select 1-5 stars and submit rating, displaying current user rating and average rating",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Rating system"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Star rating component displays on game detail page",
+        "User can click stars to select rating (1-5)",
+        "Submit button saves rating to backend",
+        "Average rating displays with star visualization",
+        "Total number of ratings displays",
+        "User's existing rating pre-fills star selection",
+        "Non-authenticated users see ratings but cannot submit"
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "text": "Create comments UI on game detail page with comment form for logged-in users, comment list displaying username and timestamp, and edit/delete buttons for user's own comments",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Comments section"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Comment form appears below game description for authenticated users",
+        "Submit button posts comment and refreshes list",
+        "Comments display in reverse chronological order",
+        "Each comment shows username and relative timestamp",
+        "Edit button appears only on user's own comments",
+        "Delete button appears only on user's own comments",
+        "Non-authenticated users see comments but no form"
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "text": "Add favorite toggle button on game detail page and game thumbnails allowing users to add/remove games from favorites with heart icon animation",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Favorites system"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Heart icon button displays on game detail page",
+        "Heart icon displays on game thumbnail cards",
+        "Filled heart indicates game is favorited",
+        "Outline heart indicates game is not favorited",
+        "Clicking toggles favorite status",
+        "Animation plays when toggling favorite",
+        "Button only functional for authenticated users"
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "text": "Implement dark mode theme with neon accent colors throughout the application using dark backgrounds (dark gray or black) and neon colors (cyan, magenta, electric blue, or lime green) for accents, buttons, and highlights",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Dark mode with neon accents",
+          "Must look like a professional esports platform"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Background colors use dark gray or black (#0a0a0a to #1a1a1a range)",
+        "Primary accent color is neon cyan, magenta, or electric blue",
+        "Buttons use neon accent colors",
+        "Card borders and highlights use neon glow effects",
+        "Text is light colored for contrast against dark background",
+        "Theme is consistent across all pages"
+      ]
+    },
+    {
+      "id": "REQ-25",
+      "text": "Ensure fully responsive design adapting layout for mobile (320px-767px), tablet (768px-1023px), and desktop (1024px+) screen sizes with mobile-first approach",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Fully responsive (mobile/tablet/desktop)",
+          "Fast and responsive design"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Mobile layout uses single column for game grids",
+        "Tablet layout uses 2-3 columns for game grids",
+        "Desktop layout uses 4-6 columns for game grids",
+        "Navigation adapts to hamburger menu on mobile",
+        "Touch targets are at least 44px on mobile",
+        "Text sizes scale appropriately per breakpoint",
+        "Images scale without breaking layout"
+      ]
+    },
+    {
+      "id": "REQ-26",
+      "text": "Optimize frontend performance with lazy loading for game thumbnails, pagination for game lists (50 games per page), and React Query caching for API responses",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Fast loading"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Game images load lazily as user scrolls",
+        "Game lists paginate at 50 items per page",
+        "API responses cache for 5 minutes",
+        "Loading states display during data fetches",
+        "Infinite scroll or pagination controls implemented for game lists"
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "text": "Implement SEO optimization with semantic HTML, descriptive page titles per route, meta descriptions, and proper heading hierarchy",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "SEO optimized"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each route has unique, descriptive page title",
+        "Meta description tags present on main pages",
+        "Heading tags follow h1 > h2 > h3 hierarchy",
+        "Semantic HTML5 elements used (header, nav, main, section, article, footer)",
+        "Alt text provided for all images"
+      ]
+    },
+    {
+      "id": "REQ-28",
+      "text": "Create franchise grouping pages showing all games belonging to a specific franchise (e.g., all Call of Duty titles, all NBA 2K editions) with franchise header and game list",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Franchise grouping pages",
+          "Must group games by franchise"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Franchise pages accessible via /franchise/:name route",
+        "Page displays franchise name as heading",
+        "All games from franchise display in grid",
+        "Games sorted by release year (newest first)",
+        "Navigation allows browsing between franchises"
+      ]
+    },
+    {
+      "id": "REQ-29",
+      "text": "Establish a bold, energetic visual design direction with neon cyberpunk aesthetics: use angular geometric shapes, gradient overlays on images, glowing borders on interactive elements, and high-contrast typography that evokes a competitive esports atmosphere",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Design uses angular geometric shapes in UI elements",
+        "Images have gradient overlays or filters",
+        "Interactive elements have glowing border effects",
+        "Typography is bold and high-contrast",
+        "Overall aesthetic resembles professional esports platforms"
+      ]
+    }
+  ],
+  "constraints": [
+    "Backend must use single-actor Motoko architecture with all logic in main actor",
+    "Do not edit immutable frontend paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui",
+    "Authentication must use Internet Identity only, no third-party auth providers",
+    "Do not implement real-time features like WebSockets or real-time chat",
+    "Do not integrate external AI services like OpenAI or Anthropic",
+    "Do not use external databases; all data persists in Motoko actor stable variables"
+  ],
+  "nonGoals": [
+    "Integration with social media APIs like Twitter or Facebook",
+    "Mobile app development (React Native or Flutter)",
+    "Video streaming or gameplay recording features",
+    "Multiplayer game functionality or matchmaking systems",
+    "External payment processing beyond basic Stripe integration",
+    "Email notifications or newsletter systems",
+    "User-generated content moderation tools",
+    "Analytics dashboards beyond basic leaderboards",
+    "Multi-language internationalization"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Hero banner background image with dark cyberpunk cityscape and neon lights (hero-banner.dim_1920x600.png)",
+      "Placeholder game cover image with geometric neon pattern (game-placeholder.dim_400x500.png)"
+    ],
+    "edits": []
+  }
+}

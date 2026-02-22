@@ -1,0 +1,431 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-homepage-with-hero-banner-section-featuring-prominent-heading-and-call-to-action",
+      "featureTitle": "Create homepage with hero banner section featuring prominent heading and call-to-action",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-search-bar-component-with-live-filtering-that-filters-games-in-real-time-as-user-types-searching-across-title-description-and-tags",
+      "featureTitle": "Build search bar component with live filtering that filters games in real-time as user types, searching across title, description, and tags",
+      "files": [
+        "frontend/src/components/SearchBar.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-category-filter-system-with-dropdown-or-checkbox-filters-for-genre-year-franchise-and-sport-that-can-be-combined-with-search",
+      "featureTitle": "Create category filter system with dropdown or checkbox filters for genre, year, franchise, and sport that can be combined with search",
+      "files": [
+        "frontend/src/components/GameFilters.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-trending-new-releases-and-popular-sections-on-homepage-displaying-curated-game-lists-with-horizontal-scrolling-carousels",
+      "featureTitle": "Build Trending, New Releases, and Popular sections on homepage displaying curated game lists with horizontal scrolling carousels",
+      "files": [
+        "frontend/src/components/GameCarousel.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-game-thumbnail-component-with-hover-animations-displaying-cover-image-title-and-genre-with-scale-and-glow-effects-on-hover",
+      "featureTitle": "Create game thumbnail component with hover animations displaying cover image, title, and genre, with scale and glow effects on hover",
+      "files": [
+        "frontend/src/components/GameThumbnail.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-game-detail-page-component-displaying-game-title-cover-image-release-year-developer-platform-full-description-average-rating-with-star-display-play-button-comments-section-and-related-games-carousel",
+      "featureTitle": "Build game detail page component displaying game title, cover image, release year, developer, platform, full description, average rating with star display, play button, comments section, and related games carousel",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/GameDetailPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-user-authentication-ui-with-login-signup-modal-or-page-using-internet-identity-displaying-login-status-in-header-with-user-menu",
+      "featureTitle": "Implement user authentication UI with login/signup modal or page using Internet Identity, displaying login status in header with user menu",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/ProfileSetupModal.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-favorites-list-page-displaying-all-games-the-user-has-favorited-with-ability-to-remove-games-accessible-from-user-menu",
+      "featureTitle": "Create favorites list page displaying all games the user has favorited with ability to remove games, accessible from user menu",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/pages/FavoritesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-recently-played-page-showing-chronological-list-of-games-the-user-has-played-with-timestamps-accessible-from-user-menu",
+      "featureTitle": "Build recently played page showing chronological list of games the user has played with timestamps, accessible from user menu",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/pages/RecentlyPlayedPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-leaderboard-page-displaying-top-100-players-ranked-by-total-play-count-with-user-ranking-username-display-and-score-display",
+      "featureTitle": "Create leaderboard page displaying top 100 players ranked by total play count with user ranking, username display, and score display",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/pages/LeaderboardPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-19"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-admin-dashboard-page-accessible-only-to-admin-users-with-game-upload-form-title-franchise-year-developer-genre-platform-sport-description-cover-image-url-tags-and-game-management-table-with-edit-delete-actions",
+      "featureTitle": "Build admin dashboard page accessible only to admin users with game upload form (title, franchise, year, developer, genre, platform, sport, description, cover image URL, tags) and game management table with edit/delete actions",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/pages/AdminDashboard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-20"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-rating-ui-on-game-detail-page-allowing-logged-in-users-to-select-1-5-stars-and-submit-rating-displaying-current-user-rating-and-average-rating",
+      "featureTitle": "Implement rating UI on game detail page allowing logged-in users to select 1-5 stars and submit rating, displaying current user rating and average rating",
+      "files": [
+        "frontend/src/components/GameRating.tsx",
+        "frontend/src/pages/GameDetailPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-21"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-comments-ui-on-game-detail-page-with-comment-form-for-logged-in-users-comment-list-displaying-username-and-timestamp-and-edit-delete-buttons-for-user-s-own-comments",
+      "featureTitle": "Create comments UI on game detail page with comment form for logged-in users, comment list displaying username and timestamp, and edit/delete buttons for user's own comments",
+      "files": [
+        "frontend/src/components/CommentsSection.tsx",
+        "frontend/src/pages/GameDetailPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-22"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-favorite-toggle-button-on-game-detail-page-and-game-thumbnails-allowing-users-to-add-remove-games-from-favorites-with-heart-icon-animation",
+      "featureTitle": "Add favorite toggle button on game detail page and game thumbnails allowing users to add/remove games from favorites with heart icon animation",
+      "files": [
+        "frontend/src/components/FavoriteButton.tsx",
+        "frontend/src/components/GameThumbnail.tsx",
+        "frontend/src/pages/GameDetailPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-23"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-dark-mode-theme-with-neon-accent-colors-throughout-the-application-using-dark-backgrounds-dark-gray-or-black-and-neon-colors-cyan-magenta-electric-blue-or-lime-green-for-accents-buttons-and-highlights",
+      "featureTitle": "Implement dark mode theme with neon accent colors throughout the application using dark backgrounds (dark gray or black) and neon colors (cyan, magenta, electric blue, or lime green) for accents, buttons, and highlights",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-24"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-fully-responsive-design-adapting-layout-for-mobile-320px-767px-tablet-768px-1023px-and-desktop-1024px-screen-sizes-with-mobile-first-approach",
+      "featureTitle": "Ensure fully responsive design adapting layout for mobile (320px-767px), tablet (768px-1023px), and desktop (1024px+) screen sizes with mobile-first approach",
+      "files": [
+        "frontend/src/components/GameThumbnail.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-25"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-optimize-frontend-performance-with-lazy-loading-for-game-thumbnails-pagination-for-game-lists-50-games-per-page-and-react-query-caching-for-api-responses",
+      "featureTitle": "Optimize frontend performance with lazy loading for game thumbnails, pagination for game lists (50 games per page), and React Query caching for API responses",
+      "files": [
+        "frontend/src/components/GameThumbnail.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-26"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-seo-optimization-with-semantic-html-descriptive-page-titles-per-route-meta-descriptions-and-proper-heading-hierarchy",
+      "featureTitle": "Implement SEO optimization with semantic HTML, descriptive page titles per route, meta descriptions, and proper heading hierarchy",
+      "files": [
+        "frontend/src/components/GameThumbnail.tsx",
+        "frontend/src/pages/GameDetailPage.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-27"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-franchise-grouping-pages-showing-all-games-belonging-to-a-specific-franchise-e-g-all-call-of-duty-titles-all-nba-2k-editions-with-franchise-header-and-game-list",
+      "featureTitle": "Create franchise grouping pages showing all games belonging to a specific franchise (e.g., all Call of Duty titles, all NBA 2K editions) with franchise header and game list",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/FranchisePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-28"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-establish-a-bold-energetic-visual-design-direction-with-neon-cyberpunk-aesthetics-use-angular-geometric-shapes-gradient-overlays-on-images-glowing-borders-on-interactive-elements-and-high-contrast-typography-that-evokes-a-competitive-esports-atmosphere",
+      "featureTitle": "Establish a bold, energetic visual design direction with neon cyberpunk aesthetics: use angular geometric shapes, gradient overlays on images, glowing borders on interactive elements, and high-contrast typography that evokes a competitive esports atmosphere",
+      "files": [
+        "frontend/src/components/GameThumbnail.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-29"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

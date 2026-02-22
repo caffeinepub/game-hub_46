@@ -1,0 +1,318 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Game library website with 500+ titles including major franchises (Fortnite, Minecraft, GTA, Call of Duty, Halo, Zelda, Mario, etc.), all yearly sports game editions (NBA 2K, Madden NFL, FIFA/EA FC, etc.), organized by categories (Action, Puzzle, Racing, Sports, RPG, etc.). Features: search/filtering, user accounts, favorites, ratings, admin dashboard, dark mode with neon accents, SEO optimized, cloud database ready.",
+  "architectural_notes": [
+    "Frontend: HTML5/CSS3 with Grid/Flexbox layout, Vanilla JS or React",
+    "Backend-ready: Node.js with REST API endpoints",
+    "Database: JSON-based storage, expandable to MongoDB",
+    "Game data structure: id, title, franchise, releaseYear, developer, genre, platform, sport, description, rating, coverImage, tags",
+    "Auto-generation system for yearly sports game editions using loops",
+    "Franchise grouping system for related games",
+    "Cloud database integration ready",
+    "Scalable architecture supporting 1,000+ games"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Hero banner background image with dark cyberpunk cityscape and neon lights (hero-banner.dim_1920x600.png)\n- Placeholder game cover image with geometric neon pattern (game-placeholder.dim_400x500.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-homepage-with-hero-banner-section-featuring-prominent-heading-and-call-to-action",
+      "title": "Create homepage with hero banner section featuring prominent heading and call-to-action",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-search-bar-component-with-live-filtering-that-filters-games-in-real-time-as-user-types-searching-across-title-description-and-tags",
+      "title": "Build search bar component with live filtering that filters games in real-time as user types, searching across title, description, and tags",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-category-filter-system-with-dropdown-or-checkbox-filters-for-genre-year-franchise-and-sport-that-can-be-combined-with-search",
+      "title": "Create category filter system with dropdown or checkbox filters for genre, year, franchise, and sport that can be combined with search",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-trending-new-releases-and-popular-sections-on-homepage-displaying-curated-game-lists-with-horizontal-scrolling-carousels",
+      "title": "Build Trending, New Releases, and Popular sections on homepage displaying curated game lists with horizontal scrolling carousels",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-game-thumbnail-component-with-hover-animations-displaying-cover-image-title-and-genre-with-scale-and-glow-effects-on-hover",
+      "title": "Create game thumbnail component with hover animations displaying cover image, title, and genre, with scale and glow effects on hover",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-game-detail-page-component-displaying-game-title-cover-image-release-year-developer-platform-full-description-average-rating-with-star-display-play-button-comments-section-and-related-games-carousel",
+      "title": "Build game detail page component displaying game title, cover image, release year, developer, platform, full description, average rating with star display, play button, comments section, and related games carousel",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-user-authentication-ui-with-login-signup-modal-or-page-using-internet-identity-displaying-login-status-in-header-with-user-menu",
+      "title": "Implement user authentication UI with login/signup modal or page using Internet Identity, displaying login status in header with user menu",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-favorites-list-page-displaying-all-games-the-user-has-favorited-with-ability-to-remove-games-accessible-from-user-menu",
+      "title": "Create favorites list page displaying all games the user has favorited with ability to remove games, accessible from user menu",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-recently-played-page-showing-chronological-list-of-games-the-user-has-played-with-timestamps-accessible-from-user-menu",
+      "title": "Build recently played page showing chronological list of games the user has played with timestamps, accessible from user menu",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-leaderboard-page-displaying-top-100-players-ranked-by-total-play-count-with-user-ranking-username-display-and-score-display",
+      "title": "Create leaderboard page displaying top 100 players ranked by total play count with user ranking, username display, and score display",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-admin-dashboard-page-accessible-only-to-admin-users-with-game-upload-form-title-franchise-year-developer-genre-platform-sport-description-cover-image-url-tags-and-game-management-table-with-edit-delete-actions",
+      "title": "Build admin dashboard page accessible only to admin users with game upload form (title, franchise, year, developer, genre, platform, sport, description, cover image URL, tags) and game management table with edit/delete actions",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-rating-ui-on-game-detail-page-allowing-logged-in-users-to-select-1-5-stars-and-submit-rating-displaying-current-user-rating-and-average-rating",
+      "title": "Implement rating UI on game detail page allowing logged-in users to select 1-5 stars and submit rating, displaying current user rating and average rating",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-comments-ui-on-game-detail-page-with-comment-form-for-logged-in-users-comment-list-displaying-username-and-timestamp-and-edit-delete-buttons-for-user-s-own-comments",
+      "title": "Create comments UI on game detail page with comment form for logged-in users, comment list displaying username and timestamp, and edit/delete buttons for user's own comments",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-favorite-toggle-button-on-game-detail-page-and-game-thumbnails-allowing-users-to-add-remove-games-from-favorites-with-heart-icon-animation",
+      "title": "Add favorite toggle button on game detail page and game thumbnails allowing users to add/remove games from favorites with heart icon animation",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-dark-mode-theme-with-neon-accent-colors-throughout-the-application-using-dark-backgrounds-dark-gray-or-black-and-neon-colors-cyan-magenta-electric-blue-or-lime-green-for-accents-buttons-and-highlights",
+      "title": "Implement dark mode theme with neon accent colors throughout the application using dark backgrounds (dark gray or black) and neon colors (cyan, magenta, electric blue, or lime green) for accents, buttons, and highlights",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-fully-responsive-design-adapting-layout-for-mobile-320px-767px-tablet-768px-1023px-and-desktop-1024px-screen-sizes-with-mobile-first-approach",
+      "title": "Ensure fully responsive design adapting layout for mobile (320px-767px), tablet (768px-1023px), and desktop (1024px+) screen sizes with mobile-first approach",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-optimize-frontend-performance-with-lazy-loading-for-game-thumbnails-pagination-for-game-lists-50-games-per-page-and-react-query-caching-for-api-responses",
+      "title": "Optimize frontend performance with lazy loading for game thumbnails, pagination for game lists (50 games per page), and React Query caching for API responses",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-seo-optimization-with-semantic-html-descriptive-page-titles-per-route-meta-descriptions-and-proper-heading-hierarchy",
+      "title": "Implement SEO optimization with semantic HTML, descriptive page titles per route, meta descriptions, and proper heading hierarchy",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-franchise-grouping-pages-showing-all-games-belonging-to-a-specific-franchise-e-g-all-call-of-duty-titles-all-nba-2k-editions-with-franchise-header-and-game-list",
+      "title": "Create franchise grouping pages showing all games belonging to a specific franchise (e.g., all Call of Duty titles, all NBA 2K editions) with franchise header and game list",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-establish-a-bold-energetic-visual-design-direction-with-neon-cyberpunk-aesthetics-use-angular-geometric-shapes-gradient-overlays-on-images-glowing-borders-on-interactive-elements-and-high-contrast-typography-that-evokes-a-competitive-esports-atmosphere",
+      "title": "Establish a bold, energetic visual design direction with neon cyberpunk aesthetics: use angular geometric shapes, gradient overlays on images, glowing borders on interactive elements, and high-contrast typography that evokes a competitive esports atmosphere",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Homepage with hero banner, trending/new/popular sections, game thumbnails with hover animations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Advanced search bar with live filtering and category filter system (genre, year, franchise, sport)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Game detail pages with description, play button, rating system, comments, related games",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "User authentication system (login/signup)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "User features: favorites list, recently played tracking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Leaderboards system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Admin dashboard to upload and edit games",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Database with 500+ games including all major franchises and yearly sports editions",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Dark mode UI with neon accents, fully responsive design",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "SEO optimization and fast loading performance",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Create backend data model for games with fields: id, title, franchise, releaseYear, developer, genre, platform, sport, description, rating, coverImage, tags, trending, isNew, playCount",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Implement backend CRUD operations for games: create game, update game, delete game, get game by id, list all games with pagination, query games by filters (genre, year, franchise, sport, search term)",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Seed backend with initial game dataset of 500+ games including: 30 Action games (Shadow Strike, Bullet Storm Arena, Cyber Ninja, etc.), 30 Puzzle games (Brain Twist, Logic Master, Tile Connect, etc.), 30 Racing games (Nitro Speed, Drift King, Street Racer Pro, etc.), 30 Sports games (Soccer Pro 2026, Basketball Legends, Street Football, etc.), 30 RPG games (Dragon Realm, Mystic Quest, Shadow Kingdom, etc.), additional categories (Simulation, Strategy, Horror, Multiplayer, Arcade, Idle, Adventure, Survival, Sandbox, Platformer) with 30 games each, all NBA 2K editions (1999-present), all NBA Live editions, all Madden NFL editions (1988-present), all NCAA Football editions, all FIFA editions (1993-2023), EA Sports FC editions, Pro Evolution Soccer editions, major franchises: Fortnite, Minecraft, Roblox, Grand Theft Auto series, Call of Duty series, Halo series, The Legend of Zelda series, Super Mario series, God of War series, Elden Ring, Apex Legends, Valorant, Rocket League, Overwatch, League of Legends, Counter-Strike, Red Dead Redemption series, Among Us, Terraria, The Sims 4",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Create backend user authentication system with Internet Identity integration supporting user registration, login, and session management",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Implement backend user profile system with favorites list, recently played games tracking, and play count tracking per game",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Create backend rating system allowing users to rate games on a scale (1-5 stars) and calculate average ratings per game",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Implement backend comments system for games allowing users to post, edit, and delete comments with timestamps",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Create backend leaderboard system tracking top players by total play count across all games",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Implement backend admin authorization system with admin role assignment and admin-only endpoints for game management",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Game Hub",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

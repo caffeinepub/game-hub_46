@@ -1,0 +1,561 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Game Hub - Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-10",
+      "summary": "Create homepage with hero banner section featuring prominent heading and call-to-action",
+      "acceptanceCriteria": [
+        "Hero banner displays at top of homepage",
+        "Hero banner includes heading text",
+        "Hero banner includes call-to-action button",
+        "Hero banner uses dark background with neon accent colors"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create homepage component with hero banner section using generated hero-banner.dim_1920x600.png from frontend/public/assets/generated/hero-banner.dim_1920x600.png. Include prominent heading, subheading, and call-to-action button with neon styling. Structure page to contain hero, search, filters, and curated game sections."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for HomePage at root path '/'. Import and configure HomePage component in the router."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Build search bar component with live filtering that filters games in real-time as user types",
+      "acceptanceCriteria": [
+        "Search input appears prominently on homepage",
+        "Search results update immediately as user types",
+        "Search matches game titles, descriptions, and tags",
+        "Search results display below search bar",
+        "Empty search shows all games"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SearchBar.tsx",
+          "operation": "create",
+          "description": "Create search bar component with controlled input that accepts onChange callback. Use neon-styled input with glow effect on focus. Implement debounced search to optimize performance."
+        },
+        {
+          "path": "frontend/src/hooks/useGameSearch.ts",
+          "operation": "create",
+          "description": "Create custom hook that manages search state and filters games by title, description, and tags. Use React Query to fetch games from backend listGames method. Return filtered games based on search term."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Integrate SearchBar component and useGameSearch hook. Display search results dynamically below search bar. Show all games when search is empty."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Create category filter system with dropdown or checkbox filters for genre, year, franchise, and sport",
+      "acceptanceCriteria": [
+        "Genre filter shows all available genres",
+        "Year filter allows selection of release year range",
+        "Franchise filter lists major franchises",
+        "Sport filter shows sports categories",
+        "Multiple filters can be active simultaneously",
+        "Filters combine with search results",
+        "Clear filters button resets all selections"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GameFilters.tsx",
+          "operation": "create",
+          "description": "Create filter panel component with dropdowns/checkboxes for genre, year range, franchise, and sport. Include clear filters button. Use shadcn/ui Select and Checkbox components with neon styling."
+        },
+        {
+          "path": "frontend/src/hooks/useGameFilters.ts",
+          "operation": "create",
+          "description": "Create custom hook that manages filter state (genre, year, franchise, sport) and combines filters with search results. Return filtered games and filter control functions."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Integrate GameFilters component and useGameFilters hook. Combine filter results with search results. Display filtered game grid below filters."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Build Trending, New Releases, and Popular sections on homepage with horizontal scrolling carousels",
+      "acceptanceCriteria": [
+        "Trending section shows games with highest recent play counts",
+        "New Releases section shows games sorted by release date (newest first)",
+        "Popular section shows games with highest all-time play counts",
+        "Each section displays as horizontal scrolling carousel",
+        "Each section shows game thumbnails with titles"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GameCarousel.tsx",
+          "operation": "create",
+          "description": "Create horizontal scrolling carousel component that accepts array of games. Implement smooth scroll with navigation arrows. Use overflow-x-scroll with custom scrollbar styling."
+        },
+        {
+          "path": "frontend/src/hooks/useGames.ts",
+          "operation": "create",
+          "description": "Create custom hook that fetches all games using backend listGames method. Derive trending (high recent playCount), new releases (sorted by releaseYear descending, isNew flag), and popular (high all-time playCount) game lists. Use React Query for caching."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add three GameCarousel sections for Trending, New Releases, and Popular. Use useGames hook to populate carousels. Include section headings with neon accent colors."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Create game thumbnail component with hover animations displaying cover image, title, and genre",
+      "acceptanceCriteria": [
+        "Thumbnail displays game cover image",
+        "Title appears below or overlaid on image",
+        "Genre tag displays on thumbnail",
+        "Hover triggers scale-up animation",
+        "Hover adds neon glow effect around thumbnail",
+        "Clicking thumbnail navigates to game detail page"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GameThumbnail.tsx",
+          "operation": "create",
+          "description": "Create game thumbnail card component displaying coverImage using ExternalBlob.getDirectURL() or fallback to generated game-placeholder.dim_400x500.png from frontend/public/assets/generated/game-placeholder.dim_400x500.png. Show title and genre. Add hover scale and neon glow CSS transitions. Make card clickable to navigate to /game/:id. Verify the blob-storage component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Build game detail page displaying game info, play button, rating, comments, and related games",
+      "acceptanceCriteria": [
+        "Page displays game title prominently at top",
+        "Cover image displays at large size",
+        "Metadata (year, developer, platform) appears organized",
+        "Full description text displays below metadata",
+        "Rating displays as star icons with numerical average",
+        "Play button is prominently positioned",
+        "Comments section shows all comments for the game",
+        "Related games carousel shows games from same genre or franchise",
+        "Page is accessible via route /game/:id"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/GameDetailPage.tsx",
+          "operation": "create",
+          "description": "Create game detail page using useParams to get game id. Fetch game using backend getGame method. Display cover image (using ExternalBlob.getDirectURL() or placeholder), title, metadata, description, rating, play button, comments section, and related games carousel. Use responsive grid layout with dark theme and neon accents. Verify the blob-storage component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useGame.ts",
+          "operation": "create",
+          "description": "Create custom hook that fetches single game by id using backend getGame method. Use React Query for caching and error handling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for GameDetailPage at /game/:id. Import and configure GameDetailPage component in the router."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Implement user authentication UI with Internet Identity login/logout and user menu",
+      "acceptanceCriteria": [
+        "Login button appears in header when not authenticated",
+        "Clicking login triggers Internet Identity authentication flow",
+        "User avatar or username displays in header when authenticated",
+        "User menu dropdown shows profile link and logout option",
+        "Authentication state persists across page navigation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "create",
+          "description": "Create header component with login/logout button using useInternetIdentity hook. Show user menu dropdown when authenticated displaying username from user profile. Include navigation links to home, leaderboard, and user pages. Use the authorization component according to its usage instructions, including profile setup flow for first-time users."
+        },
+        {
+          "path": "frontend/src/components/ProfileSetupModal.tsx",
+          "operation": "create",
+          "description": "Create modal component for first-time user profile setup. Prompt user for name using controlled form. Call backend saveCallerUserProfile method on submit. Implement proper loading states and prevent modal flash using isFetched check. Use the authorization component's profile setup guidelines."
+        },
+        {
+          "path": "frontend/src/hooks/useUserProfile.ts",
+          "operation": "create",
+          "description": "Create custom hook wrapping backend getCallerUserProfile method with React Query. Return profile data, loading state, and isFetched flag to prevent modal flash. Follow authorization component's usage pattern for profile fetching."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add Header component to App layout. Wrap app content with authentication check to ensure users must log in before accessing app data. Clear cached data on logout using queryClient.clear()."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Create favorites list page displaying favorited games with remove functionality",
+      "acceptanceCriteria": [
+        "Favorites page accessible from user menu",
+        "Page displays grid of favorited games",
+        "Each game shows thumbnail and title",
+        "Remove button appears on each game",
+        "Clicking remove updates list immediately",
+        "Empty state displays when no favorites exist"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/FavoritesPage.tsx",
+          "operation": "create",
+          "description": "Create favorites page that fetches user profile favorites list using backend getCallerUserProfile method. Display game thumbnails in grid with remove buttons. Call backend updateFavorites method to remove games. Show empty state when favorites array is empty."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for FavoritesPage at /favorites. Import and configure FavoritesPage component in the router."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Add Favorites link to user menu dropdown pointing to /favorites route."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Build recently played page showing chronological list of played games with timestamps",
+      "acceptanceCriteria": [
+        "Recently played page accessible from user menu",
+        "Games display in reverse chronological order",
+        "Each entry shows game thumbnail, title, and play timestamp",
+        "List shows last 20 played games",
+        "Empty state displays when no games played"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/RecentlyPlayedPage.tsx",
+          "operation": "create",
+          "description": "Create recently played page that fetches user profile recentlyPlayed list using backend getCallerUserProfile method. Display games in reverse chronological order with timestamps. Show empty state when recentlyPlayed array is empty."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for RecentlyPlayedPage at /recently-played. Import and configure RecentlyPlayedPage component in the router."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Add Recently Played link to user menu dropdown pointing to /recently-played route."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Create leaderboard page displaying top 100 players ranked by total play count",
+      "acceptanceCriteria": [
+        "Leaderboard page accessible from main navigation",
+        "Table displays rank, username, and total plays",
+        "Top 100 users are shown",
+        "Current user's rank is highlighted if in top 100",
+        "Ranks update when data refreshes"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/LeaderboardPage.tsx",
+          "operation": "create",
+          "description": "Create leaderboard page that fetches top 100 users using backend getLeaderboard method. Display table with rank, username (from getUserProfile), and total plays. Highlight current user's row. Use shadcn/ui Table component with neon styling."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for LeaderboardPage at /leaderboard. Import and configure LeaderboardPage component in the router."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Add Leaderboard link to main navigation pointing to /leaderboard route."
+        }
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "summary": "Build admin dashboard with game upload form and management table (admin-only access)",
+      "acceptanceCriteria": [
+        "Admin dashboard route protected and only accessible to admins",
+        "Upload form includes all required game fields",
+        "Form validation ensures required fields are filled",
+        "Successful upload adds game to database and shows confirmation",
+        "Game management table lists all games with pagination",
+        "Edit button opens form pre-filled with game data",
+        "Delete button removes game after confirmation",
+        "Non-admin users redirected when accessing admin routes"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AdminDashboard.tsx",
+          "operation": "create",
+          "description": "Create admin dashboard with game upload form (title, franchise, releaseYear, developer, genre, platform, sport, description, coverImage URL, tags, trending, isNew). Include game management table listing all games with edit/delete buttons. Use backend createGame, updateGame, deleteGame methods. Add file upload for coverImage using ExternalBlob.fromBytes. Implement form validation and confirmation dialogs. Verify the blob-storage component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/AdminRoute.tsx",
+          "operation": "create",
+          "description": "Create protected route wrapper component that checks if user is admin using backend isCallerAdmin method. Redirect non-admin users to home page. Use the authorization component according to its usage instructions."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add protected admin route for AdminDashboard at /admin using AdminRoute wrapper. Import and configure both components in the router."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Add Admin Dashboard link to user menu dropdown (visible only to admins) pointing to /admin route. Check admin status using backend isCallerAdmin method."
+        }
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "summary": "Implement rating UI allowing users to rate games with 1-5 stars",
+      "acceptanceCriteria": [
+        "Star rating component displays on game detail page",
+        "User can click stars to select rating (1-5)",
+        "Submit button saves rating to backend",
+        "Average rating displays with star visualization",
+        "Total number of ratings displays",
+        "User's existing rating pre-fills star selection",
+        "Non-authenticated users see ratings but cannot submit"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GameRating.tsx",
+          "operation": "create",
+          "description": "Create rating component with interactive star selection (1-5). Fetch current rating using backend getGameRating method. Submit rating using backend rateGame method. Display average rating and count. Show read-only view for non-authenticated users. Use neon-colored stars."
+        },
+        {
+          "path": "frontend/src/pages/GameDetailPage.tsx",
+          "operation": "modify",
+          "description": "Integrate GameRating component into game detail page. Position below game metadata and above comments section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-22",
+      "summary": "Create comments UI with form, list, and edit/delete functionality for own comments",
+      "acceptanceCriteria": [
+        "Comment form appears below game description for authenticated users",
+        "Submit button posts comment and refreshes list",
+        "Comments display in reverse chronological order",
+        "Each comment shows username and relative timestamp",
+        "Edit button appears only on user's own comments",
+        "Delete button appears only on user's own comments",
+        "Non-authenticated users see comments but no form"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/CommentsSection.tsx",
+          "operation": "create",
+          "description": "Create comments section with comment form (textarea and submit button) and comments list. Fetch comments using backend getGameComments method. Add comment using backend addComment method. Implement edit (updateComment) and delete (deleteComment) for user's own comments. Show username from getUserProfile. Display relative timestamps. Show form only for authenticated users."
+        },
+        {
+          "path": "frontend/src/pages/GameDetailPage.tsx",
+          "operation": "modify",
+          "description": "Integrate CommentsSection component into game detail page. Position below rating section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-23",
+      "summary": "Add favorite toggle button with heart icon on game details and thumbnails",
+      "acceptanceCriteria": [
+        "Heart icon button displays on game detail page",
+        "Heart icon displays on game thumbnail cards",
+        "Filled heart indicates game is favorited",
+        "Outline heart indicates game is not favorited",
+        "Clicking toggles favorite status",
+        "Animation plays when toggling favorite",
+        "Button only functional for authenticated users"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FavoriteButton.tsx",
+          "operation": "create",
+          "description": "Create favorite toggle button component with heart icon. Check if game is in favorites using user profile favorites array. Toggle favorite using backend updateFavorites method (add: true or false). Add scale animation on toggle. Show filled or outline heart based on favorite status. Disable for non-authenticated users."
+        },
+        {
+          "path": "frontend/src/components/GameThumbnail.tsx",
+          "operation": "modify",
+          "description": "Add FavoriteButton component to game thumbnail card, positioned in top-right corner with absolute positioning."
+        },
+        {
+          "path": "frontend/src/pages/GameDetailPage.tsx",
+          "operation": "modify",
+          "description": "Add FavoriteButton component to game detail page, positioned near the play button or title section."
+        }
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "summary": "Implement dark mode theme with neon accent colors throughout the application",
+      "acceptanceCriteria": [
+        "Background colors use dark gray or black (#0a0a0a to #1a1a1a range)",
+        "Primary accent color is neon cyan, magenta, or electric blue",
+        "Buttons use neon accent colors",
+        "Card borders and highlights use neon glow effects",
+        "Text is light colored for contrast against dark background",
+        "Theme is consistent across all pages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define dark theme color palette with CSS variables for backgrounds (#0a0a0a to #1a1a1a), neon accent colors (cyan #00f0ff, magenta #ff00ff, electric blue #0080ff), and light text colors. Add glow effect utilities using box-shadow. Set body background to dark color."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom dark background colors, neon accent colors, and glow shadow utilities. Configure dark mode strategy if needed."
+        }
+      ]
+    },
+    {
+      "id": "REQ-25",
+      "summary": "Ensure fully responsive design for mobile, tablet, and desktop screen sizes",
+      "acceptanceCriteria": [
+        "Mobile layout uses single column for game grids",
+        "Tablet layout uses 2-3 columns for game grids",
+        "Desktop layout uses 4-6 columns for game grids",
+        "Navigation adapts to hamburger menu on mobile",
+        "Touch targets are at least 44px on mobile",
+        "Text sizes scale appropriately per breakpoint",
+        "Images scale without breaking layout"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Add responsive navigation with hamburger menu for mobile (< 768px). Use Tailwind responsive utilities (sm:, md:, lg:) to show/hide navigation elements."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Apply responsive grid classes to game sections: grid-cols-1 (mobile), md:grid-cols-2 or md:grid-cols-3 (tablet), lg:grid-cols-4 or lg:grid-cols-6 (desktop). Adjust spacing and padding for different breakpoints."
+        },
+        {
+          "path": "frontend/src/components/GameThumbnail.tsx",
+          "operation": "modify",
+          "description": "Ensure thumbnail is fully responsive with aspect-ratio utility. Scale images using object-cover. Set minimum touch target size of 44px on mobile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-26",
+      "summary": "Optimize frontend performance with lazy loading, pagination, and React Query caching",
+      "acceptanceCriteria": [
+        "Game images load lazily as user scrolls",
+        "Game lists paginate at 50 items per page",
+        "API responses cache for 5 minutes",
+        "Loading states display during data fetches",
+        "Infinite scroll or pagination controls implemented for game lists"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/GameThumbnail.tsx",
+          "operation": "modify",
+          "description": "Add loading='lazy' attribute to image elements for lazy loading. Add loading skeleton placeholder while image loads."
+        },
+        {
+          "path": "frontend/src/hooks/useGames.ts",
+          "operation": "modify",
+          "description": "Configure React Query with staleTime of 5 minutes (300000ms) for game list caching. Implement pagination logic with 50 items per page."
+        },
+        {
+          "path": "frontend/src/components/GameList.tsx",
+          "operation": "create",
+          "description": "Create paginated game list component with pagination controls or infinite scroll. Display loading skeleton during fetch. Show 50 games per page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-27",
+      "summary": "Implement SEO optimization with semantic HTML, page titles, and meta descriptions",
+      "acceptanceCriteria": [
+        "Each route has unique, descriptive page title",
+        "Meta description tags present on main pages",
+        "Heading tags follow h1 > h2 > h3 hierarchy",
+        "Semantic HTML5 elements used (header, nav, main, section, article, footer)",
+        "Alt text provided for all images"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SEOHead.tsx",
+          "operation": "create",
+          "description": "Create SEO head component using react-helmet-async or similar to manage document head. Accept title and description props. Set unique page titles and meta descriptions per route."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Wrap page content with semantic HTML5 elements (main, section). Add SEOHead component with title 'Game Hub - 500+ Games' and relevant meta description. Use proper heading hierarchy (h1 for hero, h2 for sections)."
+        },
+        {
+          "path": "frontend/src/pages/GameDetailPage.tsx",
+          "operation": "modify",
+          "description": "Add SEOHead component with dynamic title based on game name. Use semantic HTML (article for game content). Ensure proper heading hierarchy."
+        },
+        {
+          "path": "frontend/src/components/GameThumbnail.tsx",
+          "operation": "modify",
+          "description": "Add descriptive alt text to game cover images using game title."
+        }
+      ]
+    },
+    {
+      "id": "REQ-28",
+      "summary": "Create franchise grouping pages showing all games belonging to a specific franchise",
+      "acceptanceCriteria": [
+        "Franchise pages accessible via /franchise/:name route",
+        "Page displays franchise name as heading",
+        "All games from franchise display in grid",
+        "Games sorted by release year (newest first)",
+        "Navigation allows browsing between franchises"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/FranchisePage.tsx",
+          "operation": "create",
+          "description": "Create franchise page using useParams to get franchise name. Filter games by franchise field. Display franchise name as h1 heading. Show games in responsive grid sorted by releaseYear descending. Include navigation to other franchises."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for FranchisePage at /franchise/:name. Import and configure FranchisePage component in the router."
+        }
+      ]
+    },
+    {
+      "id": "REQ-29",
+      "summary": "Establish bold, energetic visual design with neon cyberpunk aesthetics",
+      "acceptanceCriteria": [
+        "Design uses angular geometric shapes in UI elements",
+        "Images have gradient overlays or filters",
+        "Interactive elements have glowing border effects",
+        "Typography is bold and high-contrast",
+        "Overall aesthetic resembles professional esports platforms"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add utility classes for angular geometric shapes (clip-path), gradient overlays (linear-gradient), and neon glow effects (box-shadow with neon colors). Define bold typography scale using font-weight-700 and above."
+        },
+        {
+          "path": "frontend/src/components/GameThumbnail.tsx",
+          "operation": "modify",
+          "description": "Apply gradient overlay to game images using pseudo-elements. Add angular border styling or clip-path for geometric shape. Enhance glow effect on hover."
+        }
+      ]
+    }
+  ]
+}
